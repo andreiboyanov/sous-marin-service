@@ -4,5 +4,5 @@ router = APIRouter()
 
 
 @router.get("/")
-def get_players():
-    pass
+async def get_players():
+    return []

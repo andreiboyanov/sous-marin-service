@@ -5,7 +5,7 @@ from sous_marin.api.api_v1.api import api_router
 from sous_marin.core.config import settings
 
 app = FastAPI(
-    title=settings.PROJECT_NAME, openapi_url="/api/v1/openapi.json"
+    title=settings.PROJECT_NAME, openapi_url=f"{settings.API_V1_STRING}/openapi.json"
 )
 
 if settings.BACKEND_CORS_ORIGINS:
@@ -17,4 +17,4 @@ if settings.BACKEND_CORS_ORIGINS:
         allow_headers=["*"],
     )
 
-app.include_router(api_router, prefix=settings.API_V1_STR)
+app.include_router(api_router, prefix=settings.API_V1_STRING)
