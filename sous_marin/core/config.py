@@ -6,6 +6,8 @@ class Settings(BaseSettings):
     API_V1_STRING = "/api/v1"
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = []
     PROJECT_NAME: str = "Sous-marin service"
+    ACCESS_TOKEN_EXPIRE_MINUTES = 60
+    SECRET_KEY = "big secret"
 
     @validator("BACKEND_CORS_ORIGINS", pre=True)
     def assemble_cors_origins(cls, v: Union[str, List[str]]) -> Union[List[str], str]:

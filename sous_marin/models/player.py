@@ -7,3 +7,11 @@ class PlayerBase(BaseModel):
     email: EmailStr
     first_name: str
     last_name: str
+
+
+class PlayerDB(PlayerBase):
+    password: Optional[str] = None
+
+
+class Player(PlayerBase):
+    pass
