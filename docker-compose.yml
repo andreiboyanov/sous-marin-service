@@ -3,7 +3,7 @@ services:
   db:
     image: mongo:latest
     volumes:
-      - app-db-data:~/data/sous-marin
+      - app-db-data:/data/sous-marin
     env_file:
       - .env
     ports:
