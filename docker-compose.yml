@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  db:
+    image: mongo:latest
+    volumes:
+      - app-db-data:~/data/sous-marin
+    env_file:
+      - .env
+    ports:
+      - 27017:27017
+
+  sous-marin-service:
+    image: 'sous-marin-service:latest'
+    depends_on:
+      - db
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: sous-marin-service.dockerfile
+
+volumes:
+  app-db-data:
