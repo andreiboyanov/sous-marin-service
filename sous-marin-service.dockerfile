@@ -10,5 +10,5 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 
 COPY pyproject.toml poetry.lock /app/
 RUN poetry install
-COPY ./sous_marin /app
-ENV PYTHONPATH=/sous_marin
+COPY ./sous_marin/ /app/sous_marin/
+ENV PYTHONPATH=/app
