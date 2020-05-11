@@ -279,6 +279,14 @@ version = "0.0.5"
 six = ">=1.4.0"
 
 [[package]]
+category = "main"
+description = "A parser for TOML-0.4.0"
+name = "pytoml"
+optional = false
+python-versions = "*"
+version = "0.1.21"
+
+[[package]]
 category = "dev"
 description = "Python HTTP for Humans."
 name = "requests"
@@ -391,7 +399,7 @@ python-versions = ">=3.6.1"
 version = "8.1"
 
 [metadata]
-content-hash = "f98030ccc6664b82ebc5fef7a12f83e9424dfe7eb9bca6cbdec57daab651aa2b"
+content-hash = "5267f85166c05230fc1a6bc297c324dc4c93c08e8d21df447292e624cb2f2acc"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -525,6 +533,10 @@ python-jose = [
 ]
 python-multipart = [
     {file = "python-multipart-0.0.5.tar.gz", hash = "sha256:f7bb5f611fc600d15fa47b3974c8aa16e93724513b49b5f95c81e6624c83fa43"},
+]
+pytoml = [
+    {file = "pytoml-0.1.21-py2.py3-none-any.whl", hash = "sha256:57a21e6347049f73bfb62011ff34cd72774c031b9828cb628a752225136dfc33"},
+    {file = "pytoml-0.1.21.tar.gz", hash = "sha256:8eecf7c8d0adcff3b375b09fe403407aa9b645c499e5ab8cac670ac4a35f61e7"},
 ]
 requests = [
     {file = "requests-2.23.0-py2.py3-none-any.whl", hash = "sha256:43999036bfa82904b6af1d99e4882b560e5e2c68e5c4b0aa03b655f3d7d73fee"},

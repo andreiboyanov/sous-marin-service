@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
+from sous_marin import __version__
 from sous_marin.api.api_v1.api import api_router
 from sous_marin.core.config import settings
 
@@ -9,7 +10,9 @@ print("Starting sous-marin-service")
 
 
 app = FastAPI(
-    title=settings.PROJECT_NAME, openapi_url=f"{settings.API_V1_STRING}/openapi.json"
+    title=settings.PROJECT_NAME,
+    version=__version__,
+    openapi_url=f"{settings.API_V1_STRING}/openapi.json"
 )
 
 if settings.BACKEND_CORS_ORIGINS:

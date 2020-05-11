@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sous-marin-service"
-version = "0.1.0"
+version = "0.1.2"
 description = "Rest service for tennis"
 authors = ["Andrei Boyanov <andrei.boyanov@gmail.com>"]
 
@@ -13,6 +13,7 @@ passlib = "^1.7.2"
 python-jose = "^3.1.0"
 python-multipart = "^0.0.5"
 pydantic = {extras = ["email"], version = "^1.5.1"}
+pytoml = "^0.1.21"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.4.1"
