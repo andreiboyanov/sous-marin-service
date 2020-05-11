@@ -18,6 +18,8 @@ services:
     build:
       context: .
       dockerfile: sous-marin-service.dockerfile
+    ports:
+      - 80:80
 
 volumes:
   app-db-data:
