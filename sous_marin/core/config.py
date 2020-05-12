@@ -3,11 +3,12 @@ from pydantic import BaseSettings, AnyHttpUrl, validator
 
 
 class Settings(BaseSettings):
-    API_V1_STRING = "/api/v1"
-    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = []
-    PROJECT_NAME: str = "Sous-marin service"
-    ACCESS_TOKEN_EXPIRE_MINUTES = 60
-    SECRET_KEY = "big secret"
+    api_v1_path = "/api/v1"
+    cors_origins: List[AnyHttpUrl] = []
+    project_name: str = "Sous-marin service"
+    access_token_ttl_minutes = 60
+    secret_key = "big secret"
+    db_url = "mongodb://sous-marin:sous-marin-password@:localhost:27017"
 
     @validator("BACKEND_CORS_ORIGINS", pre=True)
     def assemble_cors_origins(cls, v: Union[str, List[str]]) -> Union[List[str], str]:
