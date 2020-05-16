@@ -22,7 +22,7 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Cache Poetry virtualenv
+    - name: Cache poetry virtualenv
       uses: actions/cache@v1
       id: cache
       with:
@@ -31,13 +31,15 @@ jobs:
         restore-keys: |
           poetry-${{ hashFiles('**/poetry.lock') }}
 
-    - name: Set Poetry config
+    - name: Configure poetry
       run: |
         poetry config virtualenvs.in-project false
         poetry config virtualenvs.path ~/.virtualenvs
 
     - name: Install Dependencies
-      run: poetry install
+      run: |
+        poetry install
+        poetry add --dev black
       if: steps.cache.outputs.cache-hit != 'true'
 
     - name: Check code formatting
