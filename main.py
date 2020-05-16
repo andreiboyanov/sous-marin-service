@@ -12,7 +12,7 @@ print("Starting sous-marin-service")
 app = FastAPI(
     title=settings.project_name,
     version=__version__,
-    openapi_url=f"{settings.api_v1_path}/openapi.json"
+    openapi_url=f"{settings.api_v1_path}/openapi.json",
 )
 
 if settings.cors_origins:

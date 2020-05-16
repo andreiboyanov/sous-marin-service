@@ -15,9 +15,7 @@ password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 ALGORITHM = "HS256"
 
 
-def create_access_token(
-    subject: str or Any, expires_delta: timedelta = None
-) -> str:
+def create_access_token(subject: str or Any, expires_delta: timedelta = None) -> str:
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
     else:
@@ -37,9 +35,7 @@ def get_password_hash(password: str) -> str:
     return password_context.hash(password)
 
 
-oauth2 = OAuth2PasswordBearer(
-    tokenUrl=f"{settings.api_v1_path}/login/access-token"
-)
+oauth2 = OAuth2PasswordBearer(tokenUrl=f"{settings.api_v1_path}/login/access-token")
 
 
 def get_current_player(token: str = Depends(oauth2)):
@@ -48,6 +44,6 @@ def get_current_player(token: str = Depends(oauth2)):
         first_name="Andrei",
         last_name="Boyanov",
         id="1095130",
-        token=token
+        token=token,
     )
     return current_player
