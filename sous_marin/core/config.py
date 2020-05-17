@@ -1,4 +1,4 @@
-from typing import Union, List
+from typing import List
 from pydantic import BaseSettings, AnyHttpUrl, validator
 
 
@@ -9,14 +9,6 @@ class Settings(BaseSettings):
     access_token_ttl_minutes = 60
     secret_key = "big secret"
     db_url = "mongodb://sous-marin:sous-marin-password@:localhost:27017"
-
-    @validator("cors_origins", pre=True)
-    def assemble_cors_origins(cls, v: Union[str, List[str]]) -> Union[List[str], str]:
-        if isinstance(v, str) and not v.startswith("["):
-            return [i.strip() for i in v.split(",")]
-        elif isinstance(v, (list, str)):
-            return v
-        raise ValueError(v)
 
 
 settings = Settings()

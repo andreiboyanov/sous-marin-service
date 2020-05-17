@@ -15,6 +15,7 @@ python-multipart = "^0.0.5"
 pydantic = {extras = ["email"], version = "^1.5.1"}
 pytoml = "^0.1.21"
 motor = "^2.1.0"
+bcrypt = "^3.1.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.4.1"
