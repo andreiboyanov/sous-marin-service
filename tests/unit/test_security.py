@@ -14,7 +14,9 @@ def test_create_access_token_assert_jwt_encoded():
 def test_create_access_token_with_expire_delta_assert_expires_sooner_then_delta():
     token = security.create_access_token("Andrei", timedelta(minutes=100))
     decoded = jwt.decode(token, settings.secret_key)
-    assert datetime.fromtimestamp(decoded["exp"]) < datetime.now() + timedelta(minutes=100)
+    assert datetime.fromtimestamp(decoded["exp"]) < datetime.now() + timedelta(
+        minutes=100
+    )
 
 
 @pytest.mark.skip(reason="Test not implemented")
